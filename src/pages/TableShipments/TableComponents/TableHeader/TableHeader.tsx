@@ -9,6 +9,7 @@ import "./tableHeader.css"
 
 
 import type { IColumnData, IRowData, ITableSettings } from "../../TableWrapper";
+import WarehouseTable from '../WarehouseTable/WarehouseTable';
 
 interface ITableProps {
   setPageSize: (pageSize: number) => void,
@@ -47,7 +48,7 @@ function TableHeader({ setPageSize, selectedRows, addColumn, deleteColumn, colum
             <WithSelected deleteRow={deleteRow} selectedRows={selectedRows} />
           </div>
           <div>
-            <Button children={undefined}></Button>
+          <WarehouseTable></WarehouseTable>
           </div>
         </div>
       </header>

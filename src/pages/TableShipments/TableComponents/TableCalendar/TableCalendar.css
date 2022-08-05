@@ -1,15 +1,15 @@
 .schedule-table {
   border-spacing: 0;
   border-collapse: collapse;
-  table-layout: fixed;
-  width: 800px;
+  width: 100%;
 }
 
 .schedule-table__th,
 .schedule-table__td {
   padding: 0;
-  height: 30px;
-  width: 30px;
+  height: 15px;
+  width: 21px;
+  min-width: 0 !important;
 }
 
 .schedule-table__td {

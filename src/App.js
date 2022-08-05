@@ -8,11 +8,11 @@ export const server = createServer(apiMockConfig);
 
 function App() {
 
-  // useEffect(() => {
-  //   if(window.location.pathname !== "/tableShipments") {
-  //     window.location.pathname = "/tableShipments";
-  //   }
-  // }, [])
+  useEffect(() => {
+    if(window.location.pathname !== "/tableShipments") {
+      window.location.pathname = "/tableShipments";
+    }
+  }, [])
 
   return (
     <div className="flex h-screen overflow-hidden">

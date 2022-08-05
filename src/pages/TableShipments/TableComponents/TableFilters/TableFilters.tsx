@@ -3,8 +3,8 @@ import isEqual from "lodash.isequal";
 import { v4 as uuidv4 } from 'uuid';
 
 import changeIcon from "assets/images/changeIcon.svg";
-import filterIcon from "assets/images/filterIcon.svg";
 import trashBin from "assets/images/trashBin.svg";
+import plusIcon from "../../../../assets/images/plus-icon.svg"
 
 import { tableService } from "api";
 import { ComponentsLoader } from 'components';
@@ -12,6 +12,8 @@ import { ComponentsLoader } from 'components';
 import type { IFilterOptionsWrapper, ITableSettings, IColumnData } from "../../TableWrapper";
 import { ModalBasic } from 'components/Modals';
 import { Button } from 'components';
+
+
 
 import { TableQueryBuilder } from "../index";
 import { t } from 'i18next';
@@ -174,18 +176,27 @@ const TableFilters: React.FC<ITableSavedFilters> = ({ sellerId, setTableSettings
       {/* ${filtersOpen ? "w-[100%]" : "w-[8%]"} */}
       <div className={`bg-white shadow-lg rounded-sm border w-full ${filtersOpen ? "md:w-[20%]" : "md:w-[10%]"} border-gray-200 transition-all flex flex-col justify-between`}>
         <div>
-          <div className='p-5 flex items-center justify-between'>
-            <div className='text-gray-800 text-base font-semibold'>
-              {filtersOpen ?
-                "Сохраненные фильтры" :
-                <img src={filterIcon} alt="filters" />
+          <div className='p-5 flex items-center '>
+            <div className='flex filters-left'>
+              <Button customClassName={`${filtersOpen && "rotate-[-90deg]"} transition-transform`} clickHandler={toggleOpenSettings}>
+                <svg width="15" height="11" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.19419 7.78645L0.794189 2.38645L2.19419 0.98645L6.19419 4.98645L10.1942 0.98645L11.5942 2.38645L6.19419 7.78645Z" fill="#94A3B8" />
+                </svg>
+              </Button>
+              <div className=' text-base font-semibold'>
+                {filtersOpen &&
+                  "ФИЛЬТРЫ"
+                }
+              </div>
+            </div>
+            <div>
+              {filtersOpen &&
+                <div className='p-4 md:p-5 text-center'>
+                  <button onClick={createModalOpenHanlder}><img src={plusIcon} /></button>
+                  {/* <Button clickHandler={createModalOpenHanlder} appearance="primary">Добавить фильтр</Button> */}
+                </div>
               }
             </div>
-            <Button customClassName={`${filtersOpen && "rotate-[-90deg]"} transition-transform`} clickHandler={toggleOpenSettings}>
-              <svg width="15" height="11" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.19419 7.78645L0.794189 2.38645L2.19419 0.98645L6.19419 4.98645L10.1942 0.98645L11.5942 2.38645L6.19419 7.78645Z" fill="#94A3B8" />
-              </svg>
-            </Button>
           </div>
           <hr></hr>
           <div>
@@ -236,9 +247,6 @@ const TableFilters: React.FC<ITableSavedFilters> = ({ sellerId, setTableSettings
             </div>
           </div>
         </div>
-        <div className='p-4 md:p-5 text-center'>
-          <Button clickHandler={createModalOpenHanlder} appearance="primary">Добавить фильтр</Button>
-        </div>
       </div>
       <ModalBasic
         id="queryBuilder-modal"
@@ -264,6 +272,7 @@ const TableFilters: React.FC<ITableSavedFilters> = ({ sellerId, setTableSettings
         setModalOpen={setFilterCreateModalOpen}
         customSize="max-w-[26rem]"
       >
+        {console.log(filterCreateModalOpen)}
         <div className="max-w-sm my-0 mx-auto px-4 py-4">
           <div className="mb-4">
             <label className="block text-sm text-gray-600 text-left font-medium mb-1" htmlFor="filter">Название Фильтра<span className="text-red-500">*</span></label>

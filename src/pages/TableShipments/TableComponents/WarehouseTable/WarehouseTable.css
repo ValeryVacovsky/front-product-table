@@ -1,0 +1,59 @@
+.type-warehouse {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-add {
+    position: relative;
+    background-color: #2255A1;
+}
+
+.button-add::before {
+    position: absolute;
+    background-image: url('../../../../assets/images/path.svg');
+    content: "";
+    background-repeat: no-repeat;
+    z-index: 1; 
+}
+
+.contacts {
+    display: flex;
+}
+
+.contacts-h1 {
+    padding-right: 40px;
+}
+
+.contact-list {
+    display: flex;
+    border-bottom: 1px solid #E2E8F0;
+    margin-bottom: 13px;
+}
+
+.contact-person {
+    padding-right: 20px;
+}
+
+.contact-person-focus {
+    color: #4281DE;
+    border-bottom: 2px solid #4281DE;
+}
+
+.delete-contacts {
+    display: flex;
+    align-items: flex-end;
+}
+
+.Button-delete {
+    top: 10px;
+    border: 2px solid #E2E8F0;
+    padding: 8px 0 8px 0px;
+    display: flex;
+    color: #F43F5E;
+    border-radius: 5px;
+}
+
+.warehouse-modal {
+    max-width: 800px;
+    overflow-y: auto;
+}
