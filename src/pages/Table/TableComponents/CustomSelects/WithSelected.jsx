@@ -5,7 +5,6 @@ import closeSelectIcon from 'assets/images/closeSelectIcon.svg';
 
 import { Button } from "components"
 
-import "./withSelected.css"
 
 function WithSelected({ selectedRows, deleteRow }) {
   const [menuOpen, setMenuOpen] = React.useState();
@@ -37,7 +36,7 @@ function WithSelected({ selectedRows, deleteRow }) {
       ref={select}
       onClick={() => setMenuOpen(!menuOpen)}
       style={{ maxWidth: '200px' }}
-      className="flex items-center justify-between text-sm font-medium mb-1 mt-2 px-2 py-1 relative border border-slate-200 rounded-md w-full cursor-pointer with-selected">
+      className="flex items-center justify-between text-sm font-medium mb-1 mt-2 px-2 py-1 relative border border-slate-200 rounded-md   cursor-pointer bg-white	w-64">
       <div>С отмеченными ({selectedRows.length})</div>
       <img src={menuOpen ? closeSelectIcon : openSelectIcon} alt="open" />
 

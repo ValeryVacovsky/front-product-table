@@ -51,7 +51,7 @@ function WarehouseModal({
       {/* Modal dialog */}
       <Transition
         id={id}
-        className="fixed inset-0 z-50 overflow-hidden flex items-center my-4 justify-center transform px-4 sm:px-6"
+        className="fixed inset-0 z-50 overflow-hidden flex items-center my-4 justify-end transform px-4 sm:px-6"
         role="dialog"
         aria-modal="true"
         show={modalOpen}
@@ -62,7 +62,7 @@ function WarehouseModal({
         leaveStart="opacity-100 translate-y-0"
         leaveEnd="opacity-0 translate-y-4"
       >
-        <div ref={modalContent} className={`bg-white rounded shadow-lg ${customSize ? customSize : `max-w-lg`} w-full max-h-full`}>
+        <div ref={modalContent} className={`bg-white rounded shadow-lg ${customSize ? customSize : `max-w-lg`} max-w-lg`}>
           {/* Modal header */}
           <div className="px-5 py-3 border-b border-gray-200">
             <div className="flex justify-between items-center">

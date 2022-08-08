@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 
-import "./TableCalendar.css";
+import "./TableCalendar.scss";
 
 function TableCalendar() {
   const [activeCells, setActiveCells]: any = useState({
